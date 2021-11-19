@@ -1,3 +1,6 @@
+
+---------AFFICHAGE---------
+
 Pour l'affichage, on affiche d'abord la premiere ligne tout en haut avec le print normal   |------------------------------------------------|
 sur par exemple n = 30 ligne de large (n variable)
 
@@ -14,3 +17,30 @@ on affiche tout le reste au milieu -> taille variable en fonction de ce qu'on a 
                                                                                                             |------------------------------------------------|
 en plus la on se fiche de la largeur qu'un string prendra vu qu'on est pas limité sur la droite 
 quoi qu'il arrive on doit afficher les lignes une par une.
+
+En ce qui concerne la gestion du magasin :
+
+3 classes : class magasin : une liste d'article(Article []), un nombre d'article restant(int)
+            class article : un numéro d'id(int), un nom(string), un prix(double), quantité présente(int)
+            class panier :  une liste d'article(Article []), un nombre d'article présent(int)
+            
+on peut rajouter une classe rayon si besoin, qui contient une liste d'article mais ce serai se compliquer pour rien
+voir a la fin si y'a pas assez dans le projet
+
+il faudrai qu'on ai une petite interface pour savoir quelle commande peut executer le client pour acheter, abandonner, vider le panier, ou procéder au payement final.
+
+procédure lors de l'arrivée dans le programme :
+
+-On affiche tout ( interface magasin d'abord puit interface utilisateur )
+-on demande ce que veut faire l'utilisateur
+-en fonction de ce qu'il répond 
+    -> abandon : on vide le panier, on met le compteur prix à 0 et on souhaite la bonne journée ( en affichage tout ca bien sûr )
+    -> ajouter un article : on demande quel article il veut, on affiche la quantité restant du produit ainsi que son prix
+             -> quantité = 0, on dit impossible, on redemande un autre article
+             -> quantité > 0, on demande la quantité voulue avec un cas si quantité voulu > quantité restante, dans quel cas on redemande la quantité voulue
+    -> on ajoute alors le produit au panier, on affiche " Produit ajouté !"
+    -> on réaffiche l'interface magasin avec toutes les variables à jour ( prix total, quantités de produit dans le panier )
+    -> et on recommence depuis l'interface utilisateur, question etc
+    
+Interface magasin : 
+    -> 
