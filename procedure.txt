@@ -13,7 +13,7 @@ sinon on s'embête pas on fait 2 lignes - une en haut et une en bas
 et puis voila
 
 on affiche tout le reste au milieu -> taille variable en fonction de ce qu'on a afficher                    |------------------------------------------------|
--> bien plus simple, on prend ca                                                                            text de taille variable
+-> bien plus simple, on prend ca                                                                              text de taille variable
                                                                                                             |------------------------------------------------|
 en plus la on se fiche de la largeur qu'un string prendra vu qu'on est pas limité sur la droite 
 quoi qu'il arrive on doit afficher les lignes une par une.
@@ -43,4 +43,9 @@ procédure lors de l'arrivée dans le programme :
     -> et on recommence depuis l'interface utilisateur, question etc
     
 Interface magasin : 
-    -> 
+    -> bonjour
+    -> nombre de produit dans le panier
+    -> prix total du panier
+    -> on peut mettre les 2 derniers articles ajoutés au panier avec leur quantité et leur prix (on fait une liste de 2 éléments qui sont remplacés a chaque fois )
+    -> on peut mettre des promotions, 3 articles en promo affichés, avec 25%, 50%, et 85% de réduction, nom prix de base puis prix réduit affichés
+       on fait une liste de 3 éléments n prix au hazard dans la liste des articles du magasin
