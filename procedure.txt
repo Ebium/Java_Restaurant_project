@@ -1,0 +1,6 @@
+Pour l'affichage, on affiche d'abord la premiere ligne tout en haut avec le print normal   |------------------------------------------------|
+sur par exemple n = 30 ligne de large (n variable)
+
+Ensuite une affiche les lignes une par une avec le System.out.format tel que ("%32s",s); qui "allouera" plus de place pour afficher s 
+
+Enfait a revoir
