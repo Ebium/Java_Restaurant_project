@@ -4,3 +4,13 @@ sur par exemple n = 30 ligne de large (n variable)
 Ensuite une affiche les lignes une par une avec le System.out.format tel que ("%32s",s); qui "allouera" plus de place pour afficher s 
 
 Enfait a revoir
+
+sinon on s'embête pas on fait 2 lignes - une en haut et une en bas
+
+et puis voila
+
+on affiche tout le reste au milieu -> taille variable en fonction de ce qu'on a afficher                    |------------------------------------------------|
+-> bien plus simple, on prend ca                                                                            text de taille variable
+                                                                                                            |------------------------------------------------|
+en plus la on se fiche de la largeur qu'un string prendra vu qu'on est pas limité sur la droite 
+quoi qu'il arrive on doit afficher les lignes une par une.
