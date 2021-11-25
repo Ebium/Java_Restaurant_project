@@ -49,3 +49,9 @@ Interface magasin :
     -> on peut mettre les 2 derniers articles ajoutés au panier avec leur quantité et leur prix (on fait une liste de 2 éléments qui sont remplacés a chaque fois )
     -> on peut mettre des promotions, 3 articles en promo affichés, avec 25%, 50%, et 85% de réduction, nom prix de base puis prix réduit affichés
        on fait une liste de 3 éléments n prix au hazard dans la liste des articles du magasin
+
+
+Un peu faible comme contenu, on peut créer 2 fonctions différentes dans l'arrivée au magasin : 
+    -> on est le client, dans quel cas on fait les instructions du dessus
+    -> on est un employé, on peu remplir le magasin avec les produits qui manque : genre une fonction cherche qui regarde le premier produit qui manque et si on a
+       envie de travailler donc de rajouter du stock
