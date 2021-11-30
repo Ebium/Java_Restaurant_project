@@ -55,3 +55,9 @@ Un peu faible comme contenu, on peut créer 2 fonctions différentes dans l'arri
     -> on est le client, dans quel cas on fait les instructions du dessus
     -> on est un employé, on peu remplir le magasin avec les produits qui manque : genre une fonction cherche qui regarde le premier produit qui manque et si on a
        envie de travailler donc de rajouter du stock
+
+
+
+
+MISE A JOUR - JEUDI 25 NOVEMBRE
+
