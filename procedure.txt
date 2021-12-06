@@ -88,3 +88,5 @@ on aurai les classes suivantes :
     
 - = pas fini il reste des choses a voir ( niveau quantité surtout pour les ingrédients dans le stock )
 . = normalement fini
+
+et enfait y'a une limite d'ingrédients pour un burger, c'est plus simple pour gérer le tableau d'ingrédients
