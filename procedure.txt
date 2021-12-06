@@ -76,11 +76,15 @@ y'aurai pas de limite d'ingrédients par contre le prix serai haut lol (nw btw a
 on aurai les classes suivantes :
     class livraison avec toutes les livraisons pour restocker
     class stock avec tous les ingrédients et différents produits - d'ailleurs quand on commence le programme, on génére random le nombre d'ingrédients
-    class ingrédient 
-    class burger - ce serai une liste d'ingrédients et qui serai singleton
-    class promotion - prend un ingrédient en attribut avec un pourcentage de réduction final et qui augmente en fonction du nombre de promotions déja présentes
+    .class ingrédient 
+    -class burger - ce serai une liste d'ingrédients et qui serai singleton
+    .class promotion - prend un int en attribut qui représente un pourcentage de promotion a appliquer 
     class fastfood qui est abstract
-    class boisson
-    class dessert
+    .class boisson
+    .  class boissonChaude
+    .class dessert
+    .  class dessertFroid
     class commande
     
+- = pas fini il reste des choses a voir ( niveau quantité surtout pour les ingrédients dans le stock )
+. = normalement fini
