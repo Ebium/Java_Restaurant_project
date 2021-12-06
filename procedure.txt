@@ -80,5 +80,7 @@ on aurai les classes suivantes :
     class burger - ce serai une liste d'ingrédients et qui serai singleton
     class promotion - prend un ingrédient en attribut avec un pourcentage de réduction final et qui augmente en fonction du nombre de promotions déja présentes
     class fastfood qui est abstract
-    
+    class boisson
+    class dessert
+    class commande
     
