@@ -61,3 +61,11 @@ Un peu faible comme contenu, on peut créer 2 fonctions différentes dans l'arri
 
 MISE A JOUR - JEUDI 25 NOVEMBRE
 
+
+
+magasin
+article
+livraison
+stock
+panier
+
