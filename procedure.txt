@@ -58,14 +58,27 @@ Un peu faible comme contenu, on peut créer 2 fonctions différentes dans l'arri
 
 
 
-
-MISE A JOUR - JEUDI 25 NOVEMBRE
-
-
-
 magasin
 article
 livraison
 stock
 panier
 
+
+
+
+2eme idée : 
+Maker (Make your own burger)
+
+on pourrai créer son propre burger a partir d'ingrédients
+y'aurai pas de limite d'ingrédients par contre le prix serai haut lol (nw btw about that ^^ worth it)
+
+on aurai les classes suivantes :
+    class livraison avec toutes les livraisons pour restocker
+    class stock avec tous les ingrédients et différents produits - d'ailleurs quand on commence le programme, on génére random le nombre d'ingrédients
+    class ingrédient 
+    class burger - ce serai une liste d'ingrédients et qui serai singleton
+    class promotion - prend un ingrédient en attribut avec un pourcentage de réduction final et qui augmente en fonction du nombre de promotions déja présentes
+    class fastfood qui est abstract
+    
+    
