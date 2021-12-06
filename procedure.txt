@@ -90,3 +90,18 @@ on aurai les classes suivantes :
 . = normalement fini
 
 et enfait y'a une limite d'ingrédients pour un burger, c'est plus simple pour gérer le tableau d'ingrédients
+
+
+
+
+REAL PROCED 
+
+.Livraison : Lorsque 2/3 du stock est manquant, on effectue une livraison pour tout remplir au maximum
+    Attention ! On ne néglige pas les accidents de la route, la livraison a en réalité un taux de 85% de chance de réussite
+
+.Fast-Food : Au démarrage du programme, un nombre aléatoire de commande est généré, s'il est au dessus de 20, alors on      
+             refuse de prendre la commande du client ! Premier arrivé, premier servi ( oui, la chance n'est pas un hazard )
+    Attention ! Le risque d'incendie est 1/20 ! Si jamais le Fast-Food brûle, le client ne pourra pas être servi !
+.Ingredient : le prix d'un ingredient sera ( en théorie ) fixé par rapport à son poids.
+
+
