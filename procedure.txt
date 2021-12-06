@@ -106,4 +106,7 @@ REAL PROCED
 
 
 donc la en gros je suis en train de faire le stock pour voir quand je dois le restocker, faut juste qu'on parcours chaque String qui il y a dans la reserve
-et on voit si y'en a moins de 30 sinon on en ajoute bref
+et on voit si y'en a moins de 30 sinon on en ajoute bref 
+D'ailleurs faut rajouter les boissons etc dans le stock 
+En mode je met pas avec les ingredients je fais deux listes a part 
+
