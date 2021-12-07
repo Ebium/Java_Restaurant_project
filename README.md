@@ -2,11 +2,11 @@
 
 Alimentation project
 
-Affiche un tableau avec plusieurs informations représentant un magasin et une personne voulant acheter des 
-articles dans ce magasin
+Maker - Make your burger !
 
-il peut ajouter des articles, en enlever, voir le prix total de son panier, payer le tout
-ou alors abandonner.
+Créez votre propre burger avec le nombre d'ingrédients que vous voulez ! (limité à 100 malgré tout)
+
+
 
 
 # Licence
