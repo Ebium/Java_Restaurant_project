@@ -116,9 +116,9 @@ REAL CLASSES
 
 .Promotion : INTERFACE() --- avoirPromotion(int)
 
-.Commande : (implements Promotion + id, cpt_id, boisson, burger, dessert, prix) --- avoirPromotion(int)
+.Commande : (implements Promotion + id, cpt_id, boisson, burger, dessert, prix) --- avoirPromotion(int), ajoutDessert(Dessert), ajoutBoisson(Boisson),                       ajoutBurger(Burger)
 
-.FastFood : ABSTRACT(quant_comm, Stock) --- ajouterCommande(Commande),
+.FastFood : (quant_comm, Stock) --- ajouterCommande(Commande),
 
 .Ingredient : (implements promotion, nom, poids, prix,String list_ingredient) --- getNom(), getPrix(), getPoids(), clone(), avoirPromotion(int),
       getString()
