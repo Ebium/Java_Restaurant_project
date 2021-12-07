@@ -114,7 +114,7 @@ REAL CLASSES
   
 .Burger : (prix,poids,composition,MAX_QUANTITE,quantite) --- ajouter_ingredient(Ingredient), getPrix(), getPoids(),               clone()
 
-.Promotion : --- avoirPromotion(int)
+.Promotion : INTERFACE() --- avoirPromotion(int)
 
 .Commande : (implements Promotion + id, cpt_id, boisson, burger, dessert, prix) --- avoirPromotion(int)
 
@@ -123,7 +123,7 @@ REAL CLASSES
 .Ingredient : (implements promotion, nom, poids, prix,String list_ingredient) --- getNom(), getPrix(), getPoids(), clone(), avoirPromotion(int),
       getString()
       
-Stock : (reserve, quantite, MAX_QUANTITE, MIN_QUANTITE) --- getInstance(), getQuantite(), getQuantitePctg(),                       avoirLivraison(), enleverIngredient(Ingredient)
+Stock : SINGLETON(reserve, quantite, MAX_QUANTITE, MIN_QUANTITE) --- getInstance(), getQuantite(), getQuantitePctg(),                       avoirLivraison(), enleverIngredient(Ingredient)
 
 
 
