@@ -120,7 +120,7 @@ REAL CLASSES
 
 .FastFood : (quant_comm, Stock) --- ajouterCommande(Commande),
 
-.Ingredient : (nom, poids, prix,String list_ingredient) --- getNom(), getPrix(), getPoids(), clone(), avoirPromotion(int),
+.Ingredient : (implements promotion, nom, poids, prix,String list_ingredient) --- getNom(), getPrix(), getPoids(), clone(), avoirPromotion(int),
       getString()
       
 Stock : (reserve, quantite, MAX_QUANTITE, MIN_QUANTITE) --- getInstance(), getQuantite(), getQuantitePctg(),                       avoirLivraison(), enleverIngredient(Ingredient)
