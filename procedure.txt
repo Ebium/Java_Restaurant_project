@@ -118,17 +118,11 @@ REAL CLASSES
 
 .Commande : (implements Promotion + id, cpt_id, boisson, burger, dessert, prix) --- avoirPromotion(int)
 
-.FastFood : (quant_comm, Stock) --- ajouterCommande(Commande),
+.FastFood : ABSTRACT(quant_comm, Stock) --- ajouterCommande(Commande),
 
 .Ingredient : (implements promotion, nom, poids, prix,String list_ingredient) --- getNom(), getPrix(), getPoids(), clone(), avoirPromotion(int),
       getString()
       
-Stock : SINGLETON(reserve, quantite, MAX_QUANTITE, MIN_QUANTITE) --- getInstance(), getQuantite(), getQuantitePctg(),                       avoirLivraison(), enleverIngredient(Ingredient)
+.Stock : SINGLETON(reserve, quantite, MAX_QUANTITE, MIN_QUANTITE) --- getInstance(), getQuantite(), getQuantitePctg(),                       avoirLivraison(), enleverIngredient(Ingredient)
 
-
-
-donc la en gros je suis en train de faire le stock pour voir quand je dois le restocker, faut juste qu'on parcours chaque String qui il y a dans la reserve
-et on voit si y'en a moins de 30 sinon on en ajoute bref 
-D'ailleurs faut rajouter les boissons etc dans le stock 
-En mode je met pas avec les ingredients je fais deux listes a part 
-
+.MyUtils : ABSTRACT() --- wait(int)
