@@ -11,7 +11,11 @@ public class Ingredient implements Promotion{
         this.poids = poids;
         this.prix = prix;
     }
-
+    
+    public String getNom(){
+        return this.nom;
+    }
+    
     public double getPrix(){
         return this.prix;
     }
