@@ -1,13 +1,17 @@
 import java.util.ArrayList;
 
 public class Stock{
-    private ArrayList<Ingredient> reserve;
+    private ArrayList<Ingredient> reserve_ingredients;
+    private ArrayList<Boisson> reserve_boisson;
+    private ArrayList<Dessert> reserve_dessert;
     private static int quantite = 0;
     private final int MAX_QUANTITE = 240;
     private final int MIN_QUANTITE = 80;
 
     private Stock(){
-        this.reserve = new ArrayList<Ingredient>();
+        this.reserve_ingredients = new ArrayList<Ingredient>();
+        this.reserve_boisson = new ArrayList<Boisson>();
+        this.reserve_dessert = new ArrayList<Dessert>();
     }
 
     private static Stock INSTANCE = new Stock();
@@ -15,6 +19,7 @@ public class Stock{
     public static Stock getInstance(){
         return INSTANCE;
     }
+
 
     public int getQuantite(){
         return quantite;
@@ -33,11 +38,11 @@ public class Stock{
             String [] liste_ingred = test.getString();
 
             for (String i : liste_ingred){
-                for (Ingredient ing : reserve){
+                for (Ingredient ing : reserve_ingredients){
                     if(ing.getNom()==i) cpt++;
                 }
                 for (int j = cpt; j < 30 ; j++){
-                    reserve.add(new Ingredient(i,1,1));
+                    reserve_ingredients.add(new Ingredient(i,1,1));
                     this.quantite++;
                 }
                 cpt = 0;
@@ -46,10 +51,10 @@ public class Stock{
         else System.out.println("|-| ALERT |-| ACCIDENT DE LA ROUTE, LIVRAISON IMPOSSIBLE !\n");
         /*
         int b = 0;
-        for (Ingredient ing : reserve){
+        for (Ingredient ing : reserve_ingredients){
 
             if(ing.getNom() == "Tomate"){
-                reserve.remove(b);
+                reserve_ingredients.remove(b);
                 System.out.println("on a enlevé un element");
                 break;
             }
@@ -57,18 +62,18 @@ public class Stock{
                 
         }
         int a = 0;
-        for (Ingredient ing : reserve){
+        for (Ingredient ing : reserve_ingredients){
                 a++;
                 System.out.println(ing.getNom());
         }
-        System.out.println(reserve.size());*/
+        System.out.println(reserve_ingredients.size());*/
     }
 
     public void enleverIngredient(Ingredient ingre){
         int b = 0;
-        for (Ingredient ing : reserve){
+        for (Ingredient ing : reserve_ingredients){
             if(ing.getNom() == ingre.getNom()){
-                reserve.remove(b);
+                reserve_ingredients.remove(b);
                 break;
             }
             b++;
