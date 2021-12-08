@@ -123,6 +123,6 @@ REAL CLASSES
 .Ingredient : (implements promotion, nom, poids, prix,String list_ingredient) --- getNom(), getPrix(), getPoids(), clone(), avoirPromotion(int),
       getString()
       
-.Stock : SINGLETON(reserve, quantite, MAX_QUANTITE, MIN_QUANTITE) --- getInstance(), getQuantite(), getQuantitePctg(),                       avoirLivraison(), enleverIngredient(Ingredient)
+.Stock : SINGLETON(reserve, quantite, MAX_QUANTITE, MIN_QUANTITE) --- getInstance(), getQuantite(), getQuantitePctg(),                       avoirLivraison(int), enleverIngredient(Ingredient)
 
 .MyUtils : ABSTRACT() --- wait(int)
