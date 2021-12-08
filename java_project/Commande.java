@@ -6,7 +6,7 @@ public class Commande implements Promotion{
     private ArrayList<Burger> burger;
     private ArrayList<Boisson> boisson;
     private ArrayList<Dessert> dessert;
-    private static double prix;
+    private static double prix = 0;
 
     public Commande(){
         cpt_id++;
@@ -17,21 +17,29 @@ public class Commande implements Promotion{
     }
 
     public void avoirPromotion(int prom){
-        this.prix =((this.prix * prom)/100);
+        Commande.prix =((Commande.prix * prom)/100);
     }
 
     public void ajoutBurger(Burger bur){
         this.burger.add(bur);
-        this.prix += bur.getPrix();
+        Commande.prix += bur.getPrix();
     }
 
     public void ajoutBoisson(Boisson boi){
         this.boisson.add(boi);
-        this.prix += boi.getPrix();
+        Commande.prix += boi.getPrix();
     }
 
     public void ajoutDessert(Dessert des){
         this.dessert.add(des);
-        this.prix += des.getPrix();
+        Commande.prix += des.getPrix();
+    }
+
+    public int getId(){
+        return this.id;
+    }
+
+    public double getPrix(){
+        return Commande.prix;
     }
 }

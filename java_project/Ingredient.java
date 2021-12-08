@@ -2,7 +2,7 @@ public class Ingredient implements Promotion{
     private String nom;
     private final double poids;
     private double prix;
-    public String [] list_ingredient = new String[]{"Tomate","Salade","Oignon","Fromage","Beacon","Steak","Sauce","Pain"};
+    private static String [] list_ingredient = new String[]{"Tomate","Salade","Oignon","Fromage","Beacon","Steak","Sauce","Pain"};
 
 
 
@@ -32,7 +32,7 @@ public class Ingredient implements Promotion{
         this.prix =((this.prix * prom)/100);
     }
 
-    public String[] getString(){
+    public static String[] getListeIngredient(){
         return list_ingredient;
     }
 }
