@@ -2,13 +2,14 @@ import java.util.ArrayList;
 
 public class Commande implements Promotion{
     private final int id;
-    private static int cpt_id = 0;
+    private static int cpt_id = FastFood.getQuantite();
     private ArrayList<Burger> burger;
     private ArrayList<Boisson> boisson;
     private ArrayList<Dessert> dessert;
     private static double prix = 0;
 
     public Commande(){
+
         cpt_id++;
         this.id = cpt_id;
         this.burger = new ArrayList<Burger>();
@@ -41,5 +42,15 @@ public class Commande implements Promotion{
 
     public double getPrix(){
         return Commande.prix;
+    }
+
+    public String toString(){
+        String s = "Burger(s) : ";
+        for (Burger b: burger) if (b.toString() != "") s += b.toString()+" | ";
+        s+="\n Dessert(s) : ";
+        for (Dessert d: dessert) if (d.toString() != "") s+= d.toString()+" | ";
+        s+="\n Boisson(s) : ";
+        for (Boisson bo: boisson) if (bo.toString() != "") s+= bo.toString()+" | ";
+        return s;
     }
 }

@@ -13,7 +13,7 @@ public class FastFood{
 
     public void ajouterCommande(Commande c){
         if (quant_comm < 20) commande.add(c);
-        else System.out.println("IMPOSSIBLE D'AJOUTER PLUS DE COMMANDE\n");
+        else System.out.println("\n\nIMPOSSIBLE D'AJOUTER PLUS DE COMMANDE\n\n");
     }
 
     public boolean incendie(){
@@ -23,5 +23,9 @@ public class FastFood{
             return true;
         }
         return false;
+    }
+
+    public static int getQuantite(){
+        return FastFood.quant_comm;
     }
 }

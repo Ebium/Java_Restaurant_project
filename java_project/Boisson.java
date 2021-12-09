@@ -15,7 +15,9 @@ public class Boisson{
     }
 
     public String toString(){
-        return ""+nom+" de "+quantite+" cl, "+prix;
+        String s = "";
+        if (this.nom != "NONE") s = this.nom;
+        return s;
     }
 
     public String getNom(){

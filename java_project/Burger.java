@@ -23,7 +23,7 @@ public class Burger{
     public String toString(){
         String s = "";
         for (Ingredient i : composition){
-            s += i.getNom()+" ";
+            if (i.getNom() != "NONE") s += i.getNom()+" ";   
         }
         return s;
     }

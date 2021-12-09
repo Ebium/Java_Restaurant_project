@@ -19,4 +19,10 @@ public class Dessert{
     public static String[] getListeDessert(){
         return liste_dessert;
     }
+
+    public String toString(){
+        String s = "";
+        if (this.nom != "NONE") s = this.nom;
+        return s;
+    }
 }

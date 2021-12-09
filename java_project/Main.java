@@ -25,7 +25,7 @@ public class Main{
             MyUtils.wait(2000);
             System.out.println("                 NOUS DEVONS FERMER LE FASTFOOD !\n");
             MyUtils.wait(2000);
-            System.out.println("                DESOLE POUR LA GENE OCCASIONNEE !\n");
+            System.out.println("                 DESOLE POUR LA GENE OCCASIONNEE !\n");
             System.out.println(line);
         }
         
@@ -52,11 +52,19 @@ public class Main{
                     if (valeur_commande == 0) break;
                 } 
 
-                
+                Commande mycommande = new Commande();
                 while(pret != 1){
                     MyUtils.clear();
-                    Commande mycommande = new Commande();
-                    System.out.println("    Que souhaitez-vous ajouter à votre commande actuelle ? \n");
+                    
+                    myfastfood.ajouterCommande(mycommande);
+                    if (mycommande.toString() != ""){
+                        System.out.println("              || Informations sur votre commande ||\n");
+                        System.out.println(" N° de commande : "+mycommande.getId());
+                        System.out.println(" Produits : "+mycommande.toString());
+                        System.out.println(" Prix : "+mycommande.getPrix()+"\n");
+                        System.out.println(line);
+                    }
+                    System.out.println("    \nQue souhaitez-vous ajouter à votre commande actuelle ? \n");
                     System.out.println("1 - Valider la commande actuelle");
                     System.out.println("2 - Ajouter un burger");
                     System.out.println("3 - Ajouter un dessert");
@@ -125,7 +133,6 @@ public class Main{
 
 
 
-
                     else if(pret == 4){               /*-------- AJOUT BOISSON --------*/
                         MyUtils.clear();
                         System.out.println("    Quel type de boisson souhaitez-vous ?\n");
@@ -173,6 +180,10 @@ public class Main{
                             prix += myboissonchaude.getPrix();
                         }
                     }
+
+
+
+
 
                     else if(pret == 2){               /*-------- AJOUT BURGER --------*/
                         Burger myburger = new Burger();
@@ -232,8 +243,9 @@ public class Main{
             } /*------------------------------------FIN WHILE PRINCIPAL ----------------------------------------------*/
             if(valeur_commande == 0) System.out.println("Vous n'avez rien commandé donc je vous souhaite une bonne journée ! \n");
                     else{
-                        System.out.println("         Très bien, nous allons procéder au payement : \n");
-                        System.out.println("\nLe prix de la commande s'élève à "+prix+" euro(s) !\n");
+                        System.out.println("         \nTrès bien, nous allons procéder au payement : \n");
+                        MyUtils.wait(2000);
+                        System.out.println("\nLe prix de la commande totale s'élève à "+prix+" euro(s) !\n");
 
                     } 
             //mettre un code de promo si y'a
