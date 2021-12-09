@@ -44,6 +44,10 @@ public class Commande implements Promotion{
         return Commande.prix;
     }
 
+    public void setPrix(double prix){
+        Commande.prix = prix;
+    }
+
     public String toString(){
         String s = "Burger(s) : ";
         for (Burger b: burger) if (b.toString() != "") s += b.toString()+"| ";

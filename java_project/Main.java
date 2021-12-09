@@ -15,7 +15,7 @@ public class Main{
         int choix = 0;
         double prix = 0.0;
         int promo = 0;
-
+        int valeur_debut_programme = 1;
 
         /*-------- DECLARIATION FASTFOOD ET RISQUE INCENDIE -------- */
         FastFood myfastfood = new FastFood(mystock);
@@ -33,11 +33,17 @@ public class Main{
         else{
             /*-------- CHOIX ARRIVEE --------- */
             MyUtils.clear();
-            System.out.println("Bonjour, voulez vous passer une commande ? -> |oui - 1| / |non - 0|"); 
+            System.out.println("            Bonjour et bienvenue chez MAKER  ?\n");
+            System.out.println("          Venez-vous pour passer une commande  ?\n");
+            System.out.println("1 - Oui");
+            System.out.println("0 - Non");
             demarrage = input.nextInt();
             System.out.print("\033[H\033[2J"); 
-            if(demarrage==0) System.out.println("\nTrès bien, je ne le prend pas du tout mal, salut !\n");
-            else System.out.println(line+"\n            Bienvenue à MAKER ! Make your own Burger !\n");
+            if(demarrage==0) {
+                System.out.println("\nTrès bien, je ne le prend pas du tout mal, allez salut ...\n\n");
+                valeur_debut_programme = 0;
+            }
+            else System.out.println(line+"\n\n           Bienvenue chez MAKER ! Make your own Burger !\n");
 
 
             /*-------------------------------WHILE PRINCIPAL-------------------------------*/
@@ -50,7 +56,14 @@ public class Main{
                     System.out.println("0 - Tout annuler");
                     valeur_commande = input.nextInt();
                     MyUtils.clear();
-                    if (valeur_commande == 0) break;
+                    if (valeur_commande == 0){
+                        System.out.println("                 Annulation de la commande en cours ...\n");
+                        MyUtils.wait(1000);
+                        System.out.println("                          Commande annulée !\n");
+                        MyUtils.wait(2000);
+                        MyUtils.clear();
+                        break;
+                    } 
                 } 
 
                 Commande mycommande = new Commande();
@@ -117,7 +130,7 @@ public class Main{
 
                             Dessert mydessert = mystock.getDessert(mychoix);
                             mycommande.ajoutDessert(mydessert);
-                            prix += mydessert.getPrix();
+                            mycommande.setPrix(mycommande.getPrix() + mydessert.getPrix());
                         }
 
                         else if (choix == 2){
@@ -147,7 +160,7 @@ public class Main{
 
                             DessertFroid mydessertfroid = mystock.getDessertFroid(mychoix);
                             mycommande.ajoutDessert(mydessertfroid);
-                            prix += mydessertfroid.getPrix();
+                            mycommande.setPrix(mycommande.getPrix() + mydessertfroid.getPrix());
                         }
                     }
 
@@ -190,7 +203,7 @@ public class Main{
 
                             Boisson myboisson = mystock.getBoisson(mychoix);
                             mycommande.ajoutBoisson(myboisson);
-                            prix += myboisson.getPrix();
+                            mycommande.setPrix(mycommande.getPrix() + myboisson.getPrix());
                         }
 
                         else if (choix == 2){
@@ -220,7 +233,7 @@ public class Main{
 
                             BoissonChaude myboissonchaude = mystock.getBoissonChaude(mychoix);
                             mycommande.ajoutBoisson(myboissonchaude);
-                            prix += myboissonchaude.getPrix();
+                            mycommande.setPrix(mycommande.getPrix() + myboissonchaude.getPrix());
                         }
                     }
 
@@ -289,13 +302,17 @@ public class Main{
                         
                     }
                         mycommande.ajoutBurger(myburger);
-                        prix += myburger.getPrix();
+                        mycommande.setPrix(mycommande.getPrix() + myburger.getPrix());
                     }
                 }
 
+                prix += mycommande.getPrix();
 
 
-                System.out.println("\n  Souhaitez vous ajouter une commande ? -> |oui - 1| / |non - 0|");
+
+                System.out.println("\n              Souhaitez vous ajouter une commande ?\n\n");
+                System.out.println("1 - Oui");
+                System.out.println("0 - Non");
                 demarrage = input.nextInt(); 
                 System.out.print("\033[H\033[2J");  
                 if (demarrage == 0){
@@ -304,7 +321,13 @@ public class Main{
                 } 
                 else pret = 0;
             } /*------------------------------------FIN WHILE PRINCIPAL ----------------------------------------------*/
-            if(valeur_commande == 0) System.out.println("Vous n'avez rien commandé donc je vous souhaite une bonne journée ! \n");
+            if((valeur_commande == 0) || (prix == 0)){
+                if (valeur_debut_programme != 0){
+                    System.out.println("\n\nVous n'avez rien commandé donc je vous souhaite une bonne journée ! \n\n");
+                    System.out.println(line);
+                    System.out.println();
+                }
+            }
                     else{
                         System.out.println("         \nTrès bien, nous allons procéder au payement : \n");
                         MyUtils.wait(2000);
