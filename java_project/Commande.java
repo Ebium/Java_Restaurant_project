@@ -9,12 +9,12 @@ public class Commande implements Promotion{
     private static double prix = 0;
 
     public Commande(){
-
         cpt_id++;
         this.id = cpt_id;
         this.burger = new ArrayList<Burger>();
         this.dessert = new ArrayList<Dessert>();
         this.boisson = new ArrayList<Boisson>();
+        prix = 0;
     }
 
     public void avoirPromotion(int prom){
@@ -44,8 +44,8 @@ public class Commande implements Promotion{
         return Commande.prix;
     }
 
-    public void setPrix(double prix){
-        Commande.prix = prix;
+    public void setPrix(double p){
+        Commande.prix += p;
     }
 
     public String toString(){

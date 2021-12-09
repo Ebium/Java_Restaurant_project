@@ -7,8 +7,8 @@ public class Stock{
     private ArrayList<Dessert> reserve_dessert;
     private ArrayList<DessertFroid> reserve_dessert_froid;
     private static int quantite = 0;
-    private final int MAX_QUANTITE = 570;
-    private final int MIN_QUANTITE = 190;
+    private final int MAX_QUANTITE = 600;
+    private final int MIN_QUANTITE = 200;
 
     private Stock(){
         this.reserve_ingredient = new ArrayList<Ingredient>();

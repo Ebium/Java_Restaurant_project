@@ -130,7 +130,7 @@ public class Main{
 
                             Dessert mydessert = mystock.getDessert(mychoix);
                             mycommande.ajoutDessert(mydessert);
-                            mycommande.setPrix(mycommande.getPrix() + mydessert.getPrix());
+                            //mycommande.setPrix(mydessert.getPrix());
                         }
 
                         else if (choix == 2){
@@ -160,7 +160,7 @@ public class Main{
 
                             DessertFroid mydessertfroid = mystock.getDessertFroid(mychoix);
                             mycommande.ajoutDessert(mydessertfroid);
-                            mycommande.setPrix(mycommande.getPrix() + mydessertfroid.getPrix());
+                            //mycommande.setPrix(mydessertfroid.getPrix());
                         }
                     }
 
@@ -203,7 +203,7 @@ public class Main{
 
                             Boisson myboisson = mystock.getBoisson(mychoix);
                             mycommande.ajoutBoisson(myboisson);
-                            mycommande.setPrix(mycommande.getPrix() + myboisson.getPrix());
+                            //mycommande.setPrix(myboisson.getPrix());
                         }
 
                         else if (choix == 2){
@@ -233,7 +233,7 @@ public class Main{
 
                             BoissonChaude myboissonchaude = mystock.getBoissonChaude(mychoix);
                             mycommande.ajoutBoisson(myboissonchaude);
-                            mycommande.setPrix(mycommande.getPrix() + myboissonchaude.getPrix());
+                            //mycommande.setPrix(myboissonchaude.getPrix());
                         }
                     }
 
@@ -302,7 +302,7 @@ public class Main{
                         
                     }
                         mycommande.ajoutBurger(myburger);
-                        mycommande.setPrix(mycommande.getPrix() + myburger.getPrix());
+                        //mycommande.setPrix(myburger.getPrix());
                     }
                 }
 
@@ -361,10 +361,10 @@ public class Main{
                         System.out.println("                Vérification du code en cours ...\n");
                         MyUtils.wait(1000);
                         System.out.println("                Code valide, payement accepté !");
-                        MyUtils.wait(1000);
+                        MyUtils.wait(2000);
                         MyUtils.clear();
                         System.out.println("                   Au revoir et à bientôt !\n");
-                        MyUtils.wait(1000);
+                        MyUtils.wait(2000);
                         System.out.println(line);
                     } 
             //mettre un code de promo si y'a
