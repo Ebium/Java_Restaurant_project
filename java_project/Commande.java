@@ -18,7 +18,7 @@ public class Commande implements Promotion{
     }
 
     public void avoirPromotion(int prom){
-        Commande.prix =((Commande.prix * prom)/100);
+        Commande.prix = Commande.prix -((Commande.prix * prom)/100);
     }
 
     public void ajoutBurger(Burger bur){
@@ -46,7 +46,7 @@ public class Commande implements Promotion{
 
     public String toString(){
         String s = "Burger(s) : ";
-        for (Burger b: burger) if (b.toString() != "") s += b.toString()+" | ";
+        for (Burger b: burger) if (b.toString() != "") s += b.toString()+"| ";
         s+="\n Dessert(s) : ";
         for (Dessert d: dessert) if (d.toString() != "") s+= d.toString()+" | ";
         s+="\n Boisson(s) : ";

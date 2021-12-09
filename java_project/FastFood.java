@@ -12,8 +12,7 @@ public class FastFood{
     }
 
     public void ajouterCommande(Commande c){
-        if (quant_comm < 20) commande.add(c);
-        else System.out.println("\n\nIMPOSSIBLE D'AJOUTER PLUS DE COMMANDE\n\n");
+        commande.add(c);
     }
 
     public boolean incendie(){

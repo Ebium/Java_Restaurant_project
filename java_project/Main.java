@@ -14,6 +14,7 @@ public class Main{
         int pret = 0;
         int choix = 0;
         double prix = 0.0;
+        int promo = 0;
 
 
         /*-------- DECLARIATION FASTFOOD ET RISQUE INCENDIE -------- */
@@ -53,9 +54,11 @@ public class Main{
                 } 
 
                 Commande mycommande = new Commande();
+
+                
+
                 while(pret != 1){
                     MyUtils.clear();
-                    
                     myfastfood.ajouterCommande(mycommande);
                     if (mycommande.toString() != ""){
                         System.out.println("              || Informations sur votre commande ||\n");
@@ -94,13 +97,23 @@ public class Main{
                             System.out.println("2 - Brownie");
                             System.out.println("3 - Cookie");
                             choix = input.nextInt();
+                            
+                            String mychoix = "";
+                            switch(choix){
 
-                            String mychoix =  switch (choix) {
-                                case 1 -> "Donut";
-                                case 2 -> "Brownie";
-                                case 3 -> "Cookie";
-                                default -> "NONE";
-                            };
+                                case 1:
+                                    mychoix = "Donut";
+                                    break;
+                                case 2:
+                                    mychoix = "Brownie";
+                                    break;
+                                case 3:
+                                    mychoix = "Cookie";
+                                    break;
+                                default:
+                                    mychoix = "NONE";
+                                    break;
+                            }
 
                             Dessert mydessert = mystock.getDessert(mychoix);
                             mycommande.ajoutDessert(mydessert);
@@ -115,12 +128,22 @@ public class Main{
                             System.out.println("3 - Yaourt");
                             choix = input.nextInt();
 
-                            String mychoix =  switch (choix) {
-                                case 1 -> "Glace";
-                                case 2 -> "Compotte";
-                                case 3 -> "Yaourt";
-                                default -> "NONE";
-                            };
+                            String mychoix = "";
+                            switch(choix){
+
+                                case 1:
+                                    mychoix = "Glace";
+                                    break;
+                                case 2:
+                                    mychoix = "Compotte";
+                                    break;
+                                case 3:
+                                    mychoix = "Yaourt";
+                                    break;
+                                default:
+                                    mychoix = "NONE";
+                                    break;
+                            }
 
                             DessertFroid mydessertfroid = mystock.getDessertFroid(mychoix);
                             mycommande.ajoutDessert(mydessertfroid);
@@ -148,12 +171,22 @@ public class Main{
                             System.out.println("3 - Coca");
                             choix = input.nextInt();
 
-                            String mychoix =  switch (choix) {
-                                case 1 -> "Eau";
-                                case 2 -> "Jus";
-                                case 3 -> "Coca";
-                                default -> "NONE";
-                            };
+                            String mychoix = "";
+                            switch(choix){
+
+                                case 1:
+                                    mychoix = "Eau";
+                                    break;
+                                case 2:
+                                    mychoix = "Jus";
+                                    break;
+                                case 3:
+                                    mychoix = "Coca";
+                                    break;
+                                default:
+                                    mychoix = "NONE";
+                                    break;
+                            }
 
                             Boisson myboisson = mystock.getBoisson(mychoix);
                             mycommande.ajoutBoisson(myboisson);
@@ -167,13 +200,23 @@ public class Main{
                             System.out.println("2 - The");
                             System.out.println("3 - Vin");
                             choix = input.nextInt();
+                            
+                            String mychoix = "";
+                            switch(choix){
 
-                            String mychoix =  switch (choix) {
-                                case 1 -> "Cafe";
-                                case 2 -> "The";
-                                case 3 -> "Vin";
-                                default -> "NONE";
-                            };
+                                case 1:
+                                    mychoix = "Cafe";
+                                    break;
+                                case 2:
+                                    mychoix = "The";
+                                    break;
+                                case 3:
+                                    mychoix = "Vin";
+                                    break;
+                                default:
+                                    mychoix = "NONE";
+                                    break;
+                            }
 
                             BoissonChaude myboissonchaude = mystock.getBoissonChaude(mychoix);
                             mycommande.ajoutBoisson(myboissonchaude);
@@ -209,17 +252,37 @@ public class Main{
                         
                         choix = input.nextInt();
                         if (choix == 0) pret_burger = 1;
-                        String mychoix =  switch (choix) {
-                            case 1 -> "Pain";
-                            case 2 -> "Steak";
-                            case 3 -> "Beacon";
-                            case 4 -> "Sauce";
-                            case 5 -> "Fromage";
-                            case 6 -> "Oignon";
-                            case 7 -> "Salade";
-                            case 8 -> "Tomate";
-                            default -> "NONE";
-                        };
+
+                        String mychoix = "";
+                            switch(choix){
+                                case 1:
+                                    mychoix = "Pain";
+                                    break;
+                                case 2:
+                                    mychoix = "Steak";
+                                    break;
+                                case 3:
+                                    mychoix = "Beacon";
+                                    break;
+                                case 4:
+                                    mychoix = "Sauce";
+                                    break;
+                                case 5:
+                                    mychoix = "Fromage";
+                                    break;
+                                case 6:
+                                    mychoix = "Oignon";
+                                    break;
+                                case 7:
+                                    mychoix = "Salade";
+                                    break;
+                                case 8:
+                                    mychoix = "Tomate";
+                                    break;
+                                default:
+                                    mychoix = "NONE";
+                                    break;
+                            }
                         Ingredient myingredient = mystock.getIngredient(mychoix);
                         myburger.ajouter_ingredient(myingredient);
                         
@@ -246,7 +309,40 @@ public class Main{
                         System.out.println("         \nTrès bien, nous allons procéder au payement : \n");
                         MyUtils.wait(2000);
                         System.out.println("\nLe prix de la commande totale s'élève à "+prix+" euro(s) !\n");
+                        MyUtils.wait(1000);
+                        System.out.println("\n    Avez-vous un code de promotion ?\n");
+                        System.out.println("1 - Oui");
+                        System.out.println("2 - Non");
+                        choix = input.nextInt();
 
+                        if (choix == 1){
+                            System.out.println("\nEntrez votre code - 6 numéros réquis");
+                            promo = input.nextInt();
+
+                            if (promo >= 100000){
+                                MyUtils.clear();
+                                System.out.println("                Vérification du code en cours ...\n");
+                                MyUtils.wait(1000);
+                                System.out.println("                Application du code en cours ...\n");
+                                MyUtils.wait(1000);
+                                prix  = prix * 0.75;
+                                System.out.println("           Code appliqué - Vous avez une remise de 25% !\n");
+                                MyUtils.wait(1000);
+                                System.out.println("Le prix de la commande totale s'élève à "+prix+" euro(s) !\n");
+                                MyUtils.wait(2000);
+                            }
+                        }
+
+                        System.out.println("\nEntrez votre code carte bleue - 4 numéros réquis\n");
+                        choix = input.nextInt();
+                        System.out.println("                Vérification du code en cours ...\n");
+                        MyUtils.wait(1000);
+                        System.out.println("                Code valide, payement accepté !");
+                        MyUtils.wait(1000);
+                        MyUtils.clear();
+                        System.out.println("                   Au revoir et à bientôt !\n");
+                        MyUtils.wait(1000);
+                        System.out.println(line);
                     } 
             //mettre un code de promo si y'a
         }   /* fin incendie */
