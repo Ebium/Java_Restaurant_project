@@ -9,6 +9,8 @@ public class Burger{
 
     public Burger(){
         this.composition = new ArrayList<Ingredient>();
+        Burger.prix = 0;
+        Burger.poids = 0;
     }
 
     public void ajouter_ingredient(Ingredient ing){

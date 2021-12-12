@@ -15,6 +15,10 @@ public class FastFood{
         commande.add(c);
     }
 
+    public void retirerCommande(Commande c){
+        commande.remove(c);
+    }
+
     public boolean incendie(){
         int inc = (int)(Math.random()*(21))+0;
 
