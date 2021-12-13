@@ -38,8 +38,6 @@ public class Stock{
     public void avoirLivraison(int chance){
         int r = (int)(Math.random()*(101))+0;
         if (chance == 1) r = 50;
-        System.out.println(r);
-        
 
         if (r <= 85){
             int cpt = 0;

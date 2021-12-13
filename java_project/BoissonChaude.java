@@ -10,6 +10,7 @@ public class BoissonChaude extends Boisson{
         if (BoissonChaude.minute >0){
             BoissonChaude.minute --;
         }
+        else System.out.println("Votre boisson s'est refroidie ... Il faut se dépêcher !");
     }
 
     public int getTemps(){

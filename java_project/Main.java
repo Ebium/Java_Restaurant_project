@@ -6,7 +6,7 @@ public class Main{
         
         Stock mystock = Stock.getInstance();
         mystock.avoirLivraison(1);
-        try (Scanner input = new Scanner(System.in)) {
+        try (Scanner input = new Scanner(System.in)){
             /*---- VARIABLE ----*/
             int valeur_commande = 0;
             int demarrage = 1;
@@ -251,8 +251,8 @@ public class Main{
                             mycommande.ajoutBurger(myburger);
                         }
                     }
-
-                    prix += mycommande.getPrix();
+                    if (pret != 5) prix += mycommande.getPrix();
+                    
 
 
 
@@ -320,8 +320,12 @@ public class Main{
                             System.out.println(line);
                             MyUtils.wait(2000);
                         } 
-                //mettre un code de promo si y'a
-            }   /* fin incendie */
+            }
+        }
+        catch (InputMismatchException e){
+            MyUtils.clear();
+            System.out.println("\n          Ta voulu joué au malin, bah on arrête tout.\n\n");
+            System.out.println(line);
         }
 
     }

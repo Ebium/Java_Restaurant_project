@@ -1,4 +1,4 @@
-public class Ingredient implements Promotion{
+public class Ingredient{
     private String nom;
     private final double poids;
     private double prix;
@@ -28,9 +28,6 @@ public class Ingredient implements Promotion{
         return new Ingredient(this.nom,this.poids,this.prix);
     }
 
-    public void avoirPromotion(int prom){
-        this.prix =((this.prix * prom)/100);
-    }
 
     public static String[] getListeIngredient(){
         return list_ingredient;
