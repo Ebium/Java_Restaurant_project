@@ -1,5 +1,5 @@
 public class BoissonChaude extends Boisson{
-    private static int minute = 20;
+    private int minute = 20;
     private static String [] liste_boisson_chaude = new String[]{"Cafe","The","Vin"};
 
     public BoissonChaude(double prix, String nom,int quantite){
@@ -7,14 +7,14 @@ public class BoissonChaude extends Boisson{
     }
 
     public void refroidir(){
-        if (BoissonChaude.minute >0){
-            BoissonChaude.minute --;
+        if (this.minute >0){
+            this.minute --;
         }
         else System.out.println("Votre boisson s'est refroidie ... Il faut se dépêcher !");
     }
 
     public int getTemps(){
-        return BoissonChaude.minute;
+        return this.minute;
     }
     
     public static String[] getListeBoissonChaude(){

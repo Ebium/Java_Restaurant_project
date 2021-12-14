@@ -6,7 +6,7 @@ public class Commande implements Promotion{
     private ArrayList<Burger> burger;
     private ArrayList<Boisson> boisson;
     private ArrayList<Dessert> dessert;
-    private static double prix = 0;
+    private double prix = 0;
 
     public Commande(){
         cpt_id++;
@@ -18,22 +18,22 @@ public class Commande implements Promotion{
     }
 
     public void avoirPromotion(int prom){
-        Commande.prix = Commande.prix -((Commande.prix * prom)/100);
+        this.prix = this.prix -((this.prix * prom)/100);
     }
 
     public void ajoutBurger(Burger bur){
         this.burger.add(bur);
-        Commande.prix += bur.getPrix();
+        this.prix += bur.getPrix();
     }
 
     public void ajoutBoisson(Boisson boi){
         this.boisson.add(boi);
-        Commande.prix += boi.getPrix();
+        this.prix += boi.getPrix();
     }
 
     public void ajoutDessert(Dessert des){
         this.dessert.add(des);
-        Commande.prix += des.getPrix();
+        this.prix += des.getPrix();
     }
 
     public int getId(){
@@ -41,11 +41,11 @@ public class Commande implements Promotion{
     }
 
     public double getPrix(){
-        return Commande.prix;
+        return this.prix;
     }
 
     public void setPrix(double p){
-        Commande.prix += p;
+        this.prix += p;
     }
 
     public String toString(){
@@ -56,5 +56,20 @@ public class Commande implements Promotion{
         s+="\n Boisson(s) : ";
         for (Boisson bo: boisson) if (bo.toString() != "") s+= bo.toString()+" | ";
         return s;
+    }
+
+    public void cloneBurger(){
+        if (burger.size() > 0) {
+        Burger newburger = new Burger();
+        newburger = burger.get(burger.size() - 1).clone();
+        ajoutBurger(newburger);
+        }
+        else{
+            MyUtils.clear();
+            System.out.println("Vous n'avez pas encore ajouté de burger !\n");
+            MyUtils.line();
+            MyUtils.wait(2000);
+        } 
+
     }
 }

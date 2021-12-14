@@ -33,12 +33,11 @@ public class Stock{
     }
 
 
-
-
     public void avoirLivraison(int chance){
         int r = (int)(Math.random()*(101))+0;
+        
         if (chance == 1) r = 50;
-
+        if (chance == 2) r = 100;
         if (r <= 85){
             int cpt = 0;
             String [] liste_ingred = Ingredient.getListeIngredient();
@@ -153,7 +152,12 @@ public class Stock{
                 cpt = 0;
             } 
         }
-        else System.out.println("|-| ALERT |-| ACCIDENT DE LA ROUTE, LIVRAISON IMPOSSIBLE !\n");
+        else{
+        System.out.println("|-| ALERT RADIO |-| ACCIDENT DE LA ROUTE, LIVRAISON DU STOCK IMPOSSIBLE POUR MAKER !\n");
+        MyUtils.line();
+        System.out.println();
+        }
+
     }
 
 
@@ -240,5 +244,4 @@ public class Stock{
         return myboissonchaude;
     }
 
-    
 }

@@ -3,7 +3,6 @@ import java.util.*;
 public class Main{
     public static void main(String[] args){
         String line = "|----------------------------------------------------------------|";
-        
         Stock mystock = Stock.getInstance();
         mystock.avoirLivraison(1);
         try (Scanner input = new Scanner(System.in)){
@@ -27,14 +26,14 @@ public class Main{
                 System.out.println("                 NOUS DEVONS FERMER LE FASTFOOD !\n");
                 MyUtils.wait(2000);
                 System.out.println("                 DESOLE POUR LA GENE OCCASIONNEE !\n");
-                System.out.println(line);
+                MyUtils.line();
             }
             
             else{
                 /*-------- CHOIX ARRIVEE --------- */
                 MyUtils.clear();
-                System.out.println("            Bonjour et bienvenue chez MAKER  ?\n");
-                System.out.println("          Venez-vous pour passer une commande  ?\n");
+                System.out.println("              Bonjour et bienvenue chez MAKER  ?\n");
+                System.out.println("            Venez-vous pour passer une commande  ?\n");
                 System.out.println("1 - Oui");
                 System.out.println("2 - Non");
                 demarrage = input.nextInt();
@@ -48,10 +47,10 @@ public class Main{
 
                 /*-------------------------------WHILE PRINCIPAL-------------------------------*/
                 while(demarrage != 2){
-                    if (lineval == 1) System.out.println(line);
+                    if (lineval == 1) MyUtils.line();
                     else{
                         lineval = 1;
-                        System.out.println("Que souhaitez vous faire ? \n");
+                        System.out.println("\nQue souhaitez vous faire ? \n");
                         System.out.println("1 - Passer une commande");
                         System.out.println("0 - Tout annuler");
                         valeur_commande = input.nextInt();
@@ -80,17 +79,27 @@ public class Main{
                             System.out.print(" Prix : ");
                             System.out.printf("%.2f",mycommande.getPrix());
                             System.out.println("\n");
-                            System.out.println(line);
+                            MyUtils.line();
                         }
                         System.out.println("    \nQue souhaitez-vous ajouter à votre commande actuelle ? \n");
                         System.out.println("1 - Valider la commande actuelle");
                         System.out.println("2 - Ajouter un burger");
-                        System.out.println("3 - Ajouter un dessert");
-                        System.out.println("4 - Ajouter une boisson");
-                        System.out.println("5 - Annuler la commande");
+                        System.out.println("3 - Repéter le dernier burger");
+                        System.out.println("4 - Ajouter un dessert");
+                        System.out.println("5 - Ajouter une boisson");
+                        System.out.println("6 - Annuler la commande");
                         pret = input.nextInt();
-                    
-                        if(pret == 1){               /*-------- VALIDATION COMMANDE --------*/
+
+
+                        if((pret==1) && (mycommande.getPrix() == 0)){
+                            MyUtils.clear();
+                            System.out.println("               Vous n'avez encore rien commandé !\n");
+                            MyUtils.line();
+                            MyUtils.wait(2000);
+                            pret = 10;
+                        }
+
+                        else if(pret == 1){               /*-------- VALIDATION COMMANDE --------*/
                             MyUtils.clear();
                             System.out.println("               Validation de la commande en cours...\n");
                             MyUtils.wait(2000);
@@ -99,7 +108,7 @@ public class Main{
                             MyUtils.clear();
                         }
 
-                        else if(pret == 5){            /*-------- ANNULATION COMMANDE --------*/
+                        else if(pret == 6){            /*-------- ANNULATION COMMANDE --------*/
                             MyUtils.clear();
                             System.out.println("         Annulation de la commande actuelle en cours ...\n");
                             MyUtils.wait(1000);
@@ -110,7 +119,7 @@ public class Main{
                             break;
                         }
 
-                        else if(pret == 3){               /*-------- AJOUT DESSERT --------*/
+                        else if(pret == 4){               /*-------- AJOUT DESSERT --------*/
                             MyUtils.clear();
                             System.out.println("               Quel type de dessert souhaitez-vous ?\n");
                             System.out.println("1 - Dessert sec");
@@ -157,7 +166,7 @@ public class Main{
                         }
 
 
-                        else if(pret == 4){               /*-------- AJOUT BOISSON --------*/
+                        else if(pret == 5){               /*-------- AJOUT BOISSON --------*/
                             MyUtils.clear();
                             System.out.println("             Quel type de boisson souhaitez-vous ?\n");
                             System.out.println("1 - Boisson fraiche");
@@ -210,7 +219,6 @@ public class Main{
                             int pret_burger = 0;
                             while(pret_burger != 1){
                             MyUtils.clear();
-                            if (myburger.toString() != ""){
                                 System.out.println("    || Informations sur votre burger ||\n");
                                 System.out.println(" Composition : "+myburger.toString());
                                 System.out.print(" Prix : ");
@@ -218,9 +226,9 @@ public class Main{
                                 System.out.println();
                                 System.out.print(" Poids : ");
                                 System.out.printf("%.2f",myburger.getPoids());
-                                System.out.println();
-                            } 
-                            System.out.println("    Que voulez-vous ajouter dans votre burger ?\n");
+                                System.out.println("\n");
+                                MyUtils.line();
+                            System.out.println("\n    Que voulez-vous ajouter dans votre burger ?\n");
                             System.out.println("0 - Rien d'autre !");
                             System.out.println("1 - Pain - 0.4kg - 1€");
                             System.out.println("2 - Steak - 0.5kg - 2€");
@@ -230,9 +238,11 @@ public class Main{
                             System.out.println("6 - Oignon - 0.2kg - 0,60€");
                             System.out.println("7 - Salade - 0.1kg - 0,50€");
                             System.out.println("8 - Tomate - 0.4kg - 0,50€");
+                            System.out.println("9 - Retirer le dernier ingrédient");
                             choix = input.nextInt();
                             if (choix == 0) pret_burger = 1;
-
+                            if (choix == 9) myburger.retirerIngredient();
+                            else{
                             String mychoix = "";
                                 switch(choix){
                                     case 1: mychoix = "Pain"; break;
@@ -246,12 +256,20 @@ public class Main{
                                     default: mychoix = "NONE"; break;
                                 }
                             Ingredient myingredient = mystock.getIngredient(mychoix);
-                            myburger.ajouter_ingredient(myingredient);
+                            myburger.ajouterIngredient(myingredient);
+                            }
                         }
                             mycommande.ajoutBurger(myburger);
                         }
+
+                        else if(pret == 3){               /*-------- CLONE BURGER --------*/
+                            mycommande.cloneBurger();
+                        }               
                     }
-                    if (pret != 5) prix += mycommande.getPrix();
+                    if (pret != 5){
+                        prix += mycommande.getPrix();
+                        mystock.avoirLivraison(0);
+                    } 
                     
 
 
@@ -262,7 +280,7 @@ public class Main{
                     demarrage = input.nextInt(); 
                     System.out.print("\033[H\033[2J");  
                     if (demarrage == 2){
-                        System.out.println(line);
+                        MyUtils.line();
                         break;            
                     } 
                     else pret = 0;
@@ -270,7 +288,7 @@ public class Main{
                 if((valeur_commande == 0) || (prix == 0)){
                     if (valeur_debut_programme != 0){
                         System.out.println("\n\nVous n'avez rien commandé donc je vous souhaite une bonne journée ! \n\n");
-                        System.out.println(line);
+                        MyUtils.line();
                         System.out.println();
                     }
                 }
@@ -281,18 +299,26 @@ public class Main{
                             System.out.printf("%.2f",prix);
                             System.out.println(" euro(s) !\n");
                             MyUtils.wait(1000);
-                            if (prix > 10){
-                            System.out.println("\n    Avez-vous un code de promotion ?\n");
-                            System.out.println("1 - Oui");
-                            System.out.println("2 - Non");
-                            choix = input.nextInt();
-                            }
-
-                            if (choix == 1){
-                                System.out.println("\nEntrez votre code - 6 numéros réquis");
-                                promo = input.nextInt();
-
-                                if (promo >= 100000){
+                            if (prix > 10.0){
+                                System.out.println("\n    Avez-vous un code de promotion ?\n");
+                                System.out.println("1 - Oui");
+                                System.out.println("2 - Non");
+                                choix = input.nextInt();
+                            
+                                if (choix == 1){
+                                    System.out.println("\nEntrez votre code - 6 numéros réquis");
+                                    promo = input.nextInt();
+                                    int lengthDePromo = ("" + promo).length();
+                                    while(lengthDePromo!=6){
+                                    MyUtils.clear();
+                                    System.out.println("                Vérification du code en cours ...\n");
+                                    MyUtils.wait(1000);
+                                    System.out.println("             Code refusé, entrez à nouveau votre code !");
+                                    MyUtils.wait(1000);
+                                    System.out.println("\nEntrez votre code - 6 numéros réquis");
+                                    promo = input.nextInt();
+                                    lengthDePromo = ("" + promo).length();
+                                }
                                     MyUtils.clear();
                                     System.out.println("                Vérification du code en cours ...\n");
                                     MyUtils.wait(1000);
@@ -310,6 +336,17 @@ public class Main{
 
                             System.out.println("\nEntrez votre code carte bleue - 4 numéros réquis\n");
                             choix = input.nextInt();
+                            int lengthDeChoix = ("" + choix).length();
+                            while(lengthDeChoix!=4){
+                            MyUtils.clear();
+                            System.out.println("                Vérification du code en cours ...\n");
+                            MyUtils.wait(1000);
+                            System.out.println("             Code refusé, entrez à nouveau votre code !");
+                            MyUtils.wait(1000);
+                            System.out.println("\nEntrez votre code carte bleue - 4 numéros réquis\n");
+                            choix = input.nextInt();
+                            lengthDeChoix = ("" + choix).length();
+                            }
                             MyUtils.clear();
                             System.out.println("                Vérification du code en cours ...\n");
                             MyUtils.wait(1000);
@@ -317,15 +354,15 @@ public class Main{
                             MyUtils.wait(3000);
                             MyUtils.clear();
                             System.out.println("                   Au revoir et à bientôt !\n");
-                            System.out.println(line);
+                            MyUtils.line();
                             MyUtils.wait(2000);
                         } 
             }
         }
         catch (InputMismatchException e){
             MyUtils.clear();
-            System.out.println("\n          Ta voulu joué au malin, bah on arrête tout.\n\n");
-            System.out.println(line);
+            System.out.println("\n          T'as voulu jouer au malin, bah on arrête tout.\n\n");
+            MyUtils.line();
         }
 
     }
