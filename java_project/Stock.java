@@ -23,7 +23,6 @@ public class Stock{
         return INSTANCE;
     }
 
-
     public int getQuantite(){
         return quantite;
     }
