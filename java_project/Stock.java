@@ -28,10 +28,6 @@ public class Stock{
         return quantite;
     }
 
-    public int getQuantitePctg(){
-        return (quantite*100)/MAX_QUANTITE;
-    }
-
 
     public void avoirLivraison(int chance){
         int r = (int)(Math.random()*(101))+0;
