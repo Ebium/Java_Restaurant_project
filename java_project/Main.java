@@ -229,7 +229,6 @@ public class Main{
                                 System.out.println("\n");
                                 MyUtils.line();
                             System.out.println("\n    Que voulez-vous ajouter dans votre burger ?\n");
-                            System.out.println("0 - Rien d'autre !");
                             System.out.println("1 - Pain - 0.4kg - 1€");
                             System.out.println("2 - Steak - 0.5kg - 2€");
                             System.out.println("3 - Beacon - 0.4kg - 1€");
@@ -239,9 +238,12 @@ public class Main{
                             System.out.println("7 - Salade - 0.1kg - 0,50€");
                             System.out.println("8 - Tomate - 0.4kg - 0,50€");
                             System.out.println("9 - Retirer le dernier ingrédient");
+                            System.out.println("10 - Valider le burger actuel");
+                            System.out.println("11 - Annuler le burger actuel");
                             choix = input.nextInt();
-                            if (choix == 0) pret_burger = 1;
+                            if (choix == 10) pret_burger = 1;
                             if (choix == 9) myburger.retirerIngredient();
+                            if (choix == 11) break;
                             else{
                             String mychoix = "";
                                 switch(choix){
@@ -259,7 +261,8 @@ public class Main{
                             myburger.ajouterIngredient(myingredient);
                             }
                         }
-                            mycommande.ajoutBurger(myburger);
+
+                            if(choix != 11) mycommande.ajoutBurger(myburger);
                         }
 
                         else if(pret == 3){               /*-------- CLONE BURGER --------*/
