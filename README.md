@@ -4,7 +4,7 @@ Alimentation project
 
 Maker - Make your burger !
 
-Créez votre propre burger avec le nombre d'ingrédients que vous voulez ! (limité à 100 malgré tout)
+Créez votre propre burger avec le nombre d'ingrédients que vous voulez !
 
 
 
